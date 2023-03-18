@@ -1,0 +1,180 @@
+:root{
+    --header: 10vh;
+    --footer: 10vh;
+    --principal: calc(100vh - (var(--header) + var(--footer)));
+}
+
+/* =================================================================
+    Body
+================================================================= */
+
+body{
+    display: grid;
+    margin: 0px;
+    background: linear-gradient(45deg, #e97f78, #90b3eb);
+    min-height: 100vh;
+    font-family: arial, sans-serif;
+}
+
+/* =================================================================
+    Header
+================================================================= */
+
+header {
+    height: var(--header);
+    text-align: center;
+    background: rgba(255, 255, 255,.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+}
+
+header h1 {
+    padding-left: 15px;
+    font-size: 2em;
+}
+
+#interact ul{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    list-style-type: none;
+}
+
+#interact ul li{
+    min-height: 10px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 1rem;
+}
+
+#interact ul li:hover{
+    cursor: pointer;
+}
+
+#interact ul li > div{
+    height: 2px;
+    transition: 0.3s;
+    transform-origin: center;
+    transform: scaleX(0);
+}
+
+#interact ul li:hover > div{
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transform: scaleX(1);
+}
+
+/* =================================================================
+    Pages
+================================================================= */
+
+#pages{
+    display: flex;
+    justify-content: center;
+    min-height: var(--principal);
+    overflow-x: hidden; 
+}
+
+.page{
+    width: 95vw;
+}
+
+/* =================================================================
+    search
+================================================================= */
+
+#search {
+    display: flex;
+    flex-direction: column;
+}
+
+#question, #matiere_select, #matiere, #input_matiere {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    height: 30px;
+    text-align: center;
+
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255,.3);
+    border-top: 1px solid rgba(255, 255, 255,.3);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+
+    margin-bottom: 10px;
+
+    box-shadow: 4px 4px 60px rgba(0, 0, 0,.2);
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#question{
+    width: 500px;
+}
+
+#matiere_select{
+    color: black;
+    padding: 0px;
+    width: auto;
+}
+
+::placeholder{
+    color: white;
+}
+
+#liste_matiere{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+#liste_matiere p{
+    text-align: center;
+    padding: 10px;
+    border-radius: 1rem;
+    background: transparent;
+    background-color: rgba(255, 255, 255,.3);;
+}
+
+#liste_matiere p:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+#liste_matiere p:active{
+    background-color: grey;
+}
+
+#b_add_matiere, #b_add_question{
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255,.3);
+    border-top: 1px solid rgba(255, 255, 255,.3);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+
+    margin-bottom: 10px;
+
+    box-shadow: 4px 4px 60px rgba(0, 0, 0,.2);
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#b_add_matiere:hover, #b_add_question:hover{
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* =================================================================
+    Footer
+================================================================= */
+
+footer {
+    height: var(--footer);
+}
