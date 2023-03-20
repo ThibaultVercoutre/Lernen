@@ -40,6 +40,31 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.return{
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255,.3);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+
+    margin-bottom: 10px;
+
+    color: white;
+    font-weight: 500;
+
+    transition: all .3s;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.return:hover{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 60px rgba(0, 0, 0,.2);
+    cursor: pointer;
+}
+
 input{
     background: transparent;
     border: none;
@@ -80,19 +105,21 @@ input[type="submit"]{
 }
 
 .cube{
+    width: 75vw;
     position: relative;
     transform-style: preserve-3d;
     display: flex;
+    justify-content: space-around;
 }
+
 /*
 #form_connexion{
-    transform: rotateY(0deg) translateX(-168px);
+    transform: translateX(-168px) translateZ(1px) rotateY(0deg) ;
 }
 
 #form_inscription{
-    transform: rotateY(90deg) translateX(168px);
-}
-*/
+    transform: translateX(168px) translateZ(1px) rotateY(180deg);
+}*/
 @keyframes spin{
     from{
         transform: rotateY(0deg);

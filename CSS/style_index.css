@@ -26,11 +26,19 @@ header {
     background: rgba(255, 255, 255,.3);
     backdrop-filter: blur(10px);
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 header h1 {
     padding-left: 15px;
     font-size: 2em;
+}
+
+#interact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #interact ul{
@@ -41,13 +49,18 @@ header h1 {
 
 #interact ul li{
     min-height: 10px;
-    padding: 5px;
+    padding: 15px;
     margin: 5px;
     border-radius: 1rem;
+    transition: 0.3s;
+    border: 1px solid transparent;
 }
 
 #interact ul li:hover{
     cursor: pointer;
+    border-top: 1px solid rgba(255, 255, 255,.3);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0,.2);
+
 }
 
 #interact ul li > div{
@@ -87,7 +100,7 @@ header h1 {
     flex-direction: column;
 }
 
-#question, #matiere_select, #matiere, #input_matiere {
+.input_select {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -111,11 +124,15 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.liste_input{
+    width: auto;
+}
+
 #question{
     width: 500px;
 }
 
-#matiere_select{
+#matiere_select_chapitre, #matiere_select_question, #chapitre_select_question{
     color: black;
     padding: 0px;
     width: auto;
@@ -125,31 +142,43 @@ header h1 {
     color: white;
 }
 
-#liste_matiere{
+#liste_matiere, #liste_chapitres {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
 
-#liste_matiere p{
+#liste_matiere p, #liste_chapitres p{
     text-align: center;
     padding: 10px;
     border-radius: 1rem;
     background: transparent;
-    background-color: rgba(255, 255, 255,.3);;
+    background-color: rgba(255, 255, 255,.3);
+
+    animation: spawn 0.8s cubic-bezier(.52,0,.38,1.33);
 }
 
-#liste_matiere p:hover {
+@keyframes spawn{
+    from{
+        transform: scale(0);
+    }
+
+    to{
+        transform: scale(1);
+    }
+}
+
+#liste_matiere p:hover, #liste_chapitres p:hover {
     background-color: #f1f1f1;
     cursor: pointer;
 }
 
-#liste_matiere p:active{
+#liste_matiere p:active, #liste_chapitres p:active {
     background-color: grey;
 }
 
-#b_add_matiere, #b_add_question{
+#b_add_matiere, #b_add_question, #b_add_chapitre{
     background: transparent;
     border: none;
     border-left: 1px solid rgba(255, 255, 255,.3);
@@ -166,7 +195,7 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#b_add_matiere:hover, #b_add_question:hover{
+#b_add_matiere:hover, #b_add_question:hover, #b_add_chapitre:hover{
     background-color: #f1f1f1;
     cursor: pointer;
 }
